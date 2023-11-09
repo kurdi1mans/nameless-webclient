@@ -1,0 +1,33 @@
+{
+  "name": "nameless-webclient",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "env-cmd -f ./config/prod.env node ./src/index.js",
+    "server": "env-cmd -f ./config/prod.env nodemon ./src/index.js",
+    "client": "npm run start --prefix client",
+    "client-local": "npm run start-local --prefix client",
+    "dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client\"",
+    "dev-local": "concurrently --kill-others-on-fail \"npm run server\" \"npm run client-local\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kurdi1mans/nameless-webclient.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC", 
+  "bugs": {
+    "url": "https://github.com/kurdi1mans/nameless-webclient/issues"
+  },
+  "homepage": "https://github.com/kurdi1mans/nameless-webclient#readme",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "env-cmd": "^10.1.0",
+    "express": "^4.18.2"
+  }
+}
